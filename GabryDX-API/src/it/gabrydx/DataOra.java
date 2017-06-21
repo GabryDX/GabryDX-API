@@ -39,23 +39,24 @@ public class DataOra {
 
 	public static String getMeseNome() {
 		SimpleDateFormat sdf = new SimpleDateFormat("MMMM");
-		return sdf.format(new Date());
+		return sdf.format(new Date()).toLowerCase();
 	}
 
 	public static int getAnno() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
 		return Integer.parseInt(sdf.format(new Date()));
 	}
+	
+	public static String getMeseNumeroAnno() {
+		return getMeseNumero()+" "+getAnno();
+	}
+	
+	public static String getMeseNomeAnno() {
+		return getMeseNome()+" "+getAnno();
+	}
 
 	public static String getMonthName(int month) {
 		return new DateFormatSymbols().getMonths()[month-1];
-	}
-
-	public static String previousMonth() {
-		int nmese = getMeseNumero()-1;
-		if (nmese == 0)
-			nmese = 12;
-		return getMonthName(nmese);
 	}
 	
 	public static String previousMonthNumber(int before) {
@@ -64,12 +65,20 @@ public class DataOra {
 			nmese += 12;
 		return getMonthName(nmese);
 	}
+	
+	public static String previousMonth() {
+		return previousMonthNumber(1);
+	}
+	
+	public static String nextMonthNumber(int after) {
+		int nmese = getMeseNumero()+after;
+		while (nmese >= 13)
+			nmese -= 12;
+		return getMonthName(nmese);
+	}
 
 	public static String nextMonth() {
-		int nmese = getMeseNumero()+1;
-		if (nmese == 13)
-			nmese = 1;
-		return getMonthName(nmese);
+		return nextMonthNumber(1);
 	}
 	
 	public static String nextMonthYear() {
@@ -78,6 +87,14 @@ public class DataOra {
 		if (nxtM.toLowerCase().equals("gennaio"))
 			anno++;
 		return nxtM + " " + anno;
+	}
+	
+	public static String previousMonthYear() {
+		String prvM = previousMonth();
+		int anno = getAnno();
+		if (prvM.toLowerCase().equals("dicembre"))
+			anno--;
+		return prvM + " " + anno;
 	}
 
 	
