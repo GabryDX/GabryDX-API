@@ -57,6 +57,13 @@ public class DataOra {
 			nmese = 12;
 		return getMonthName(nmese);
 	}
+	
+	public static String previousMonthNumber(int before) {
+		int nmese = getMeseNumero()-before;
+		while (nmese <= 0)
+			nmese += 12;
+		return getMonthName(nmese);
+	}
 
 	public static String nextMonth() {
 		int nmese = getMeseNumero()+1;
