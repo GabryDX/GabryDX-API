@@ -2,7 +2,7 @@ package it.gabrydx;
 
 public class Stringhe {
 
-	
+
 	/**
 	 * Verifica se due stringhe sono uguali e se non lo sono mostra
 	 * le differenze
@@ -29,11 +29,23 @@ public class Stringhe {
 				diff = s1.substring(max) +"\n\n\n\n\n"+ s2.substring(max);
 			i++;
 		}
-		
+
 		if (s1.substring(max).equals("") && s2.substring(max).equals(""))
 			diff = "Le stringhe sono uguali.";
 
 		return diff;
+	}
+
+	/**
+	 * Controlla se una stringa è tutta maiuscola
+	 * @param s
+	 * @return
+	 */
+	public static boolean isAllUpperCase (String s) {
+		for (int i=0; i<s.length(); i++)
+			if (Character.isLowerCase(s.charAt(i)))
+				return false;
+		return true;
 	}
 
 }
