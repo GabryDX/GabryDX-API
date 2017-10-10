@@ -47,5 +47,16 @@ public class Stringhe {
 				return false;
 		return true;
 	}
+	
+	/**
+	 * Ritorna i numeri in una stringa
+	 * @param str
+	 * @return
+	 */
+	public static String getNumebers(String str) {
+		str = str.replaceAll("[^\\.0123456789]","");
+		return str;
+	}
+
 
 }
