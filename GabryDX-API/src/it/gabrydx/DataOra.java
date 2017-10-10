@@ -26,6 +26,26 @@ public class DataOra {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
 		return sdf.format(new Date());
 	}
+	
+	public static String getOrario() {
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		return sdf.format(new Date());
+	}
+	
+	public static int getOre() {
+		SimpleDateFormat sdf = new SimpleDateFormat("HH");
+		return Integer.parseInt(sdf.format(new Date()));
+	}
+	
+	public static int getMinuti() {
+		SimpleDateFormat sdf = new SimpleDateFormat("mm");
+		return Integer.parseInt(sdf.format(new Date()));
+	}
+	
+	public static int getSecondi() {
+		SimpleDateFormat sdf = new SimpleDateFormat("ss");
+		return Integer.parseInt(sdf.format(new Date()));
+	}
 
 	public static int getGiorno() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd");
