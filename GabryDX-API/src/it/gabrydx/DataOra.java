@@ -51,6 +51,16 @@ public class DataOra {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd");
 		return Integer.parseInt(sdf.format(new Date()));
 	}
+	
+	public static String getGiornoDellaSettimanaBreve() {
+		SimpleDateFormat sdf = new SimpleDateFormat("E");
+		return sdf.format(new Date());
+	}
+	
+	public static String getGiornoDellaSettimanaLungo() {
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+		return sdf.format(new Date());
+	}
 
 	public static int getMeseNumero() {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM");
