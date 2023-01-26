@@ -64,15 +64,14 @@ public class Stringhe {
 	
 	/**
 	 * Separa una stringa str ogni partitionSize caratteri e restituisce una lista di stringhe
-	 * @param str
-	 * @param partitionSize
+	 * @param str - stringa da dividere
+	 * @param partitionSize - n posizione per la divisione della stringa
 	 * @return Ritorna una lista di stringhe
 	 */
 	public static List<String> splitEachNth(String str, int partitionSize) {
 		List<String> parts = new ArrayList<String>();
         int len = str.length();
-        for (int i=0; i<len; i+=partitionSize)
-        {
+        for (int i=0; i<len; i+=partitionSize) {
             parts.add(str.substring(i, Math.min(len, i + partitionSize)));
         }
         return parts;
