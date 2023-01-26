@@ -4,34 +4,34 @@ package it.gabrydx;
 	 di un programma*/
 
 public class Cronometro {
-	private long tempoiniziale;
-	private long tempofinale;
+	private long tempoIniziale;
+	private long tempoFinale;
 	
 	public void start() {
-		tempoiniziale = System.currentTimeMillis();
+		tempoIniziale = System.currentTimeMillis();
 	}
 	
 	public void stop() {
-		tempofinale = System.currentTimeMillis();
+		tempoFinale = System.currentTimeMillis();
 	}
 
-	public long tempotrascorso() {
-		return tempofinale - tempoiniziale;
+	public long tempoTrascorso() {
+		return tempoFinale - tempoIniziale;
 	}
 	
-	public long tempotrascorsoSecondi() {
-		return tempotrascorso()/1000;
+	public long tempoTrascorsoSecondi() {
+		return tempoTrascorso()/1000;
 	}
 	
 	public long inizio() {
-		return tempoiniziale;
+		return tempoIniziale;
 	}
 	
 	public long fine() {
-		return tempofinale;
+		return tempoFinale;
 	}
 	
 	public boolean hasStarted() {
-		return tempotrascorso()!=tempofinale;
+		return tempoTrascorso()!=tempoFinale;
 	}
 }//fine classe
